@@ -1,0 +1,44 @@
+<div class="container">
+
+    <h1>Angular CRUD Example by Nijo</h1>
+
+  
+
+    <a href="#" routerLink="/employee/create/" class="btn btn-success">Create New employee</a>
+
+    
+
+    <table class="table table-bordered">
+
+      <tr>
+
+        <th>ID</th>
+        <th>Name</th>
+        <th>Email</th>
+		<th width="220px">Avatar</th>
+
+		<th width="220px">Action</th>
+
+      </tr>
+
+      <tr *ngFor="let employee of employees">
+
+        <td>{{ employee.id }}</td>
+        <td>{{ employee.first_name }}</td>
+        <td>{{ employee.email }}</td>
+        <td><img src="{{ employee.avatar }}" alt=""></td>
+
+        <td>
+
+
+          <a href="#" [routerLink]="['/employee/', employee.id, 'edit']" class="btn btn-primary">Edit</a>
+
+          <button type="button" (click)="deleteemployee(employee.id)" class="btn btn-danger">Delete</button>
+
+        </td>
+
+      </tr>
+
+    </table>
+
+ </div>
